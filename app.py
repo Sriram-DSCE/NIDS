@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import numpy as np
 import joblib
@@ -738,3 +739,6 @@ else:  # About page
         - `label_encoders.pkl` - Encoders for categorical variables
         - `target_encoder.pkl` - Encoder for target variable
         """)
+    if __name__ == "__main__":
+        port = int(os.environ.get("PORT", 8501))
+        os.system(f"streamlit run app.py --server.port {port} --server.address 0.0.0.0")
